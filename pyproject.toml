@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "qa_guru_7_21"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 pytest = "^7.4.3"
 selene = "2.0.0rc4"
 allure-pytest = "^2.13.2"
