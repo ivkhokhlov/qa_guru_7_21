@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "qa-guru-7-21"
+version = "0.1.0"
+description = ""
+authors = ["Ivan Khokhlov <xxx.mailbox73@gmail.com>"]
+readme = "README.md"
+packages = [{include = "qa_guru_7_21"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.4.3"
+selene = "2.0.0rc4"
+allure-pytest = "^2.13.2"
+appium-python-client = "^3.1.0"
+pydantic = "^2.4.2"
+pydantic-settings = "^2.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
