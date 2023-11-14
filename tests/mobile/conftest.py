@@ -6,9 +6,10 @@ import pytest
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from appium.options.ios import XCUITestOptions
-from selene import browser, support
 from dotenv import load_dotenv
+from selene import browser, support
 
+import utils
 from config import config
 
 
@@ -74,7 +75,15 @@ def mobile_management(request):
 
     yield
 
-    browser.quit()
+    utils.add_screenshot(browser)
+    utils.add_xml(browser)
+
+    session_id = browser.driver.session_id
+
+    with allure.step('Tear down app session'):
+        browser.quit()
+
+    utils.attach_bstack_video(session_id, user_name, access_key)
 
 
 # Device name parameters
